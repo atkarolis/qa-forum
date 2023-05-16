@@ -1,0 +1,105 @@
+{
+  "questions": [
+    {
+      "id": 0,
+      "user_id": 0,
+      "title": "How to clean a toilet?",
+      "question": "It's been a while since I cleaned my toilet. How You guys do it? Where do I start?",
+      "category": [
+        0,
+        2
+      ],
+      "answer_ids": [
+        1,
+        2
+      ],
+      "likes": 20,
+      "edited": false
+    },
+    {
+      "id": 1,
+      "user_id": 1,
+      "title": "How do I repair my microwave?",
+      "question": "My microwave is broken. How can I fix it?",
+      "category": [
+        0
+      ],
+      "answer_ids": [
+        3
+      ],
+      "likes": 13,
+      "edited": false
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "title": "How to plant a tree?",
+      "question": "I have a lot of empty space in my backyard and Im planning to plant a TREE there. How?",
+      "category": [
+        1
+      ],
+      "answer_ids": [
+        0
+      ],
+      "likes": 0,
+      "edited": false
+    }
+  ], 
+  "answers":[
+    {
+      "id": 0,
+      "user_id": 0,
+      "question_id": 2,
+      "answer": "Follow these steps: 1) Dig a hole. Make sure its the same depth as the tree's rootball but three times as wide. 2) Soak the rootball. 3) Position Your tree and refill the hole. 4) Take good care of it!",
+      "likes": 1,
+      "edited": false
+    },
+    {
+      "id": 1,
+      "user_id": 1,
+      "question_id": 0,
+      "answer": "Begin by applying toilte cleaner to the bowl, and allow it to soak. Next, use toilet brush to clean it real good.",
+      "likes": 5,
+      "edited": false
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "question_id": 0,
+      "answer": "The most commonly recommended natural and non-toxic way to clean a toilet is with vinegar and baking soda. Simply poor two cups of vinegar into a toilet bowl, and pour one cup of baking soda. When the solution stops fizzing, spread it over the bowl with a toilet cleaner brush. Leave for 10-15 minutes and rinse.",
+      "likes": 3,
+      "edited": false
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "question_id": 1,
+      "answer": "The Consumer Product Safety Commission reports that people have been electrocuted trying to repair their microwaves. So don't try it",
+      "likes": 25,
+      "edited": false
+    }
+  ],
+  "users":[
+    {
+      "id": 0,
+      "username": "allen_answerson",
+      "email": "allenanswerson@gmail.com",
+      "password": "K1234-kk",
+      "picture": "../profile_pictures/allen-answerson.jpeg"
+    },
+    {
+      "id": 1,
+      "username": "cherriespretzel",
+      "email": "cherriespretzel@gmail.com",
+      "password": "A1234-aa",
+      "picture": "../profile_pictures/cherriespretzel.jpeg"
+    },
+    {
+      "id": 2,
+      "username": "dictatesoy",
+      "email": "dictatesoy@gmail.com",
+      "password": "B1234-bb",
+      "picture": "../profile_pictures/dictatesoy.jpeg"
+    }
+  ]
+}
