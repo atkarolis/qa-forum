@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from "styled-components";
 import logo from '../../resources/ask.svg';
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.header` //header scroll adjust
   height: 120px;
   padding: 0 200px 0 150px;
   display: flex;
@@ -43,6 +43,7 @@ const StyledHeader = styled.header`
     transform-origin: bottom left;
   }
   a.active {
+    color: #000000;
     font-weight: 600; //adjust it later
   }
 `
