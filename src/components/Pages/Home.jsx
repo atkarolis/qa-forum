@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from "styled-components";
 import { useContext } from 'react';
 import QuestionsContext from '../../contexts/QuestionsContext';
-import Question from '../UI/Molecules/Question';
+import Question from '../Molecules/Question';
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 const StyledMain = styled.main`

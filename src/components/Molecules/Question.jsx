@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useContext } from 'react';
-import UsersContext from "../../../contexts/UsersContext";
+import UsersContext from "../../contexts/UsersContext";
+import Categories from "../Atoms/Categories";
 
 const Question = ({ data }) => {
 
@@ -23,8 +24,9 @@ const Question = ({ data }) => {
           <span>{data.edited}</span>
         </div>
         <div className='categories'>
-          <span>{data.category}</span>
-          <span>Category2</span>
+          <Categories 
+          cats={data.category}
+          />
         </div>
       </div>
     </article>
