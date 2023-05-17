@@ -1,6 +1,12 @@
 import styled from "styled-components";
+import { useContext } from 'react';
+import UsersContext from "../../../contexts/UsersContext";
 
-const Question = () => {
+const Question = ({ data }) => {
+
+  const { users } = useContext(UsersContext);
+  const user = users.find(el => el.id === data.user_id);
+
   return (
     <article>
       <div className='vote-container'>
@@ -13,7 +19,7 @@ const Question = () => {
         <h4>{data.title}</h4>
         <p>{data.question}</p>
         <div className='details'>
-          <span>ČIA USER NAME</span>
+          <span>{user.username}</span>
           <span>{data.edited}</span>
         </div>
         <div className='categories'>
