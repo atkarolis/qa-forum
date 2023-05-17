@@ -3,8 +3,9 @@ import { createContext, useReducer, useEffect } from 'react';
 const QuestionsContext = createContext();
 const QuestionsActionTypes = {
   get: 'get_all_questions',
-  add: 'add_new_question'
-}
+  add: 'add_new_question',
+  delete: 'remove_specific_question'
+};
 
 const reducer = (state, action) => {
   switch(action.type){
@@ -19,6 +20,11 @@ const reducer = (state, action) => {
         body: JSON.stringify(action.data)
       });
       return [ ...state, action.data];
+    case QuestionsActionTypes.delete:
+      fetch(`http;//localhost:8080/questions/${action.id}`, {
+        method: "DELETE"
+      });
+      return state.filter(el => el.id !== action.id);
     default:
       return state;
   }
