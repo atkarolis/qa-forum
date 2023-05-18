@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useContext } from 'react';
 import QuestionsContext from '../../contexts/QuestionsContext';
 import Question from '../Molecules/Question';
+import { Link } from 'react-router-dom';
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 const StyledMain = styled.main`
@@ -98,7 +99,9 @@ const Home = () => {
             <button type="submit"><i className="fa fa-search">S</i></button>
             <button>Filter</button>
           </div>
-          <button>Ask Your Question</button>
+          <Link to="addQuestion">
+            <button>Ask Your Question</button>
+          </Link>
         </section>
         {
           questions.map(question => 
