@@ -1,8 +1,8 @@
-const Categories = ({cats}) => {
-  cats.forEach(category => category)
+const Categories = ({categories}) => {
+  categories.forEach(category => category)
   return (
     <>
-      <span>{cats}</span>
+      <span>{categories}</span>
     </>
   );
 }

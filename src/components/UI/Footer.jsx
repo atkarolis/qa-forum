@@ -40,10 +40,10 @@ const Footer = () => {
             <li><NavLink to='/'>About</NavLink></li>
           </ul>
           <ul>
-            <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-            <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-            <li><a href="https://www.reddit.com/" target="_blank">Reddit</a></li>
-            <li><a href="https://discord.com/" target="_blank">Discord</a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://www.reddit.com/" target="_blank" rel="noreferrer">Reddit</a></li>
+            <li><a href="https://discord.com/" target="_blank" rel="noreferrer">Discord</a></li>
           </ul>
         </div>
         <div className='credits'>

@@ -25,7 +25,7 @@ const Question = ({ data }) => {
         </div>
         <div className='categories'>
           <Categories 
-          cats={data.category}
+          categories={data.category}
           />
         </div>
       </div>
