@@ -6,6 +6,7 @@ import Home from './components/Pages/Home';
 import Footer from './components/UI/Footer';
 import AddQuestion from './components/Pages/AddQuestion';
 import Register from './components/Pages/Register';
+import Login from './components/Pages/Login';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route index element={<Home />}/>
         <Route path='/addQuestion' element={<AddQuestion />}/>
         <Route path='/register' element={<Register />}/>
+        <Route path='/login' element={<Login />}/>
     </Routes>
     <Footer />
     </>

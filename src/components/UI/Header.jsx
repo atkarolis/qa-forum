@@ -60,7 +60,7 @@ const Header = () => {
           <li><NavLink to='/'>ABOUT</NavLink></li>
         </ul>
         <ul>
-          <li><NavLink to='/'>LOG IN</NavLink></li>
+          <li><NavLink to='/login'>LOG IN</NavLink></li>
           <li><NavLink to='/register'>SIGN UP</NavLink></li>
         </ul>
       </nav>

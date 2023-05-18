@@ -43,6 +43,13 @@
       ],
       "likes": 0,
       "edited": false
+    },
+    {
+      "id": "ff22ef55-abfd-4a19-85fc-b4789e1d9a60",
+      "user_id": 3,
+      "category": false,
+      "title": "Light bulb",
+      "question": "Hello! How to change freaking light bulb? Please HELP!"
     }
   ],
   "answers": [
