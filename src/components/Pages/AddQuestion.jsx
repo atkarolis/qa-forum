@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 as generateId} from 'uuid';
 import UsersContext from '../../contexts/UsersContext';
 import QuestionsContext from "../../contexts/QuestionsContext";
+import { CategoryEnum } from "../Atoms/Categories";
 
 const AddQuestion = () => {
 
@@ -38,17 +39,19 @@ const AddQuestion = () => {
     navigate('/');
   }
   
+  let categoriesOptions = [];
+  CategoryEnum.forEach(element => {
+    categoriesOptions.push(<label htmlFor={element}>{element}</label>)
+    categoriesOptions.push(<input type="checkbox" id={element} onChange={(e) => {inputHandler(e)}}/>)
+  })
+
   return (
     <main>
       <h1>Submit Your Question, Pal</h1>
       <form onSubmit={(e) => {formHandler(e)}}>
         <div>
-          <label htmlFor="category">Choose category:</label>
-          <input required type="checkbox"
-            name="category" id="category"
-            value={formInputs.category}
-            onChange={(e) => {inputHandler(e)}} //čia reikia arba select arba +2 checkboxus
-          />
+          Choose Category: 
+            {categoriesOptions}
         </div>
         <div>
           <label htmlFor="title">Title of Your Question:</label>

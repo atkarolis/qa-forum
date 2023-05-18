@@ -1,3 +1,9 @@
+export const CategoryEnum = [
+  "Interior maintenance",
+  "Exterior maintenance",
+  "Other"
+]
+
 const Categories = ({categories}) => {
   categories.forEach(category => category)
   return (
