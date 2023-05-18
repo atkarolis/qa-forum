@@ -61,7 +61,7 @@ const Header = () => {
         </ul>
         <ul>
           <li><NavLink to='/'>LOG IN</NavLink></li>
-          <li><NavLink to='/'>SIGN UP</NavLink></li>
+          <li><NavLink to='/register'>SIGN UP</NavLink></li>
         </ul>
       </nav>
     </StyledHeader>

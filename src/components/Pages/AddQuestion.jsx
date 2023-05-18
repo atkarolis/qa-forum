@@ -64,10 +64,10 @@ const AddQuestion = () => {
         <div>
           <label htmlFor="question">Ask here, mate:</label>
           <textarea required
-          name="question" id="question" 
-          cols="50" rows="10"
-          value={formInputs.question}
-          onChange={(e) => {inputHandler(e)}}
+            name="question" id="question" 
+            cols="50" rows="10"
+            value={formInputs.question}
+            onChange={(e) => {inputHandler(e)}}
           ></textarea>
         </div>
         <button>Ask!</button>
