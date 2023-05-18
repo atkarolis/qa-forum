@@ -1,7 +1,12 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import UsersContext from '../../contexts/UsersContext';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
+
+  const { setUsers, UsersActionTypes } = useContext(UsersContext);
 
   const values = {
     email: '',
@@ -39,8 +44,11 @@ const Register = () => {
     const formik = useFormik({
       initialValues: values,
       validationSchema: validationSchema,
-      onSubmit: (values) => {
-        console.log(values); //čia kažkaip tuos duomenis reik saugoti data.json'e
+      onSubmit: (data) => {
+        setUsers({
+          type: UsersActionTypes.add,
+          data: data
+        });
       }
     });
 
@@ -128,7 +136,9 @@ const Register = () => {
             >{formik.errors.picture}</p>
           }
         </div>
-        <button>Register</button>
+        <Link to="/">
+          <button type="submit">Register</button>
+        </Link>
       </form>
     </main>
   );

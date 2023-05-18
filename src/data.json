@@ -44,8 +44,8 @@
       "likes": 0,
       "edited": false
     }
-  ], 
-  "answers":[
+  ],
+  "answers": [
     {
       "id": 0,
       "user_id": 0,
@@ -79,27 +79,35 @@
       "edited": false
     }
   ],
-  "users":[
+  "users": [
     {
       "id": 0,
       "username": "allen_answerson",
       "email": "allenanswerson@gmail.com",
-      "password": "K1234-kk",
+      "password": "K1234-k",
       "picture": "../profile_pictures/allen-answerson.jpeg"
     },
     {
       "id": 1,
       "username": "cherriespretzel",
       "email": "cherriespretzel@gmail.com",
-      "password": "A1234-aa",
+      "password": "A1234-a",
       "picture": "../profile_pictures/cherriespretzel.jpeg"
     },
     {
       "id": 2,
       "username": "dictatesoy",
       "email": "dictatesoy@gmail.com",
-      "password": "B1234-bb",
+      "password": "B1234-b",
       "picture": "../profile_pictures/dictatesoy.jpeg"
+    },
+    {
+      "email": "mcboon@gmail.com",
+      "password": "C1234-c",
+      "passwordConfirm": "C1234-c",
+      "username": "mcboon",
+      "picture": "https://helios-i.mashable.com/imagery/articles/01RhPcOiy9rYKba0BstQt3m/images-3.fill.size_2000x1250.v1611692402.jpg",
+      "id": 3
     }
   ]
 }
