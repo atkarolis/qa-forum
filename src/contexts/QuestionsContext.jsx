@@ -8,6 +8,7 @@ const QuestionsActionTypes = {
 };
 
 const reducer = (state, action) => {
+  console.log(action);
   switch(action.type){
     case QuestionsActionTypes.get:
       return action.data;
@@ -22,7 +23,7 @@ const reducer = (state, action) => {
       console.log(action.data)
       return [ ...state, action.data];
     case QuestionsActionTypes.delete:
-      fetch(`http;//localhost:8080/questions/${action.id}`, {
+      fetch(`http://localhost:8080/questions/${action.id}`, {
         method: "DELETE"
       });
       return state.filter(el => el.id !== action.id);
