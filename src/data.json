@@ -5,10 +5,6 @@
       "user_id": 0,
       "title": "How to clean a toilet?",
       "question": "It's been a while since I cleaned my toilet. How You guys do it? Where do I start?",
-      "category": [
-        0,
-        2
-      ],
       "answer_ids": [
         1,
         2
@@ -21,9 +17,6 @@
       "user_id": 1,
       "title": "How do I repair my microwave?",
       "question": "My microwave is broken. How can I fix it?",
-      "category": [
-        0
-      ],
       "answer_ids": [
         3
       ],
@@ -35,17 +28,23 @@
       "user_id": 2,
       "title": "How to plant a tree?",
       "question": "I have a lot of empty space in my backyard and Im planning to plant a TREE there. How?",
-      "category": [
-        1
-      ],
       "answer_ids": [
         0
       ],
       "likes": 0,
       "edited": false
+    },
+    {
+      "id": "860c8612-7672-46fa-ab88-9127a613f2b9",
+      "user_id": 0,
+      "answers_ids": [],
+      "likes": 0,
+      "edited": false,
+      "title": "ignas",
+      "question": "Mldc"
     }
-  ], 
-  "answers":[
+  ],
+  "answers": [
     {
       "id": 0,
       "user_id": 0,
@@ -79,27 +78,35 @@
       "edited": false
     }
   ],
-  "users":[
+  "users": [
     {
       "id": 0,
       "username": "allen_answerson",
       "email": "allenanswerson@gmail.com",
-      "password": "K1234-kk",
+      "password": "K1234-k",
       "picture": "../profile_pictures/allen-answerson.jpeg"
     },
     {
       "id": 1,
       "username": "cherriespretzel",
       "email": "cherriespretzel@gmail.com",
-      "password": "A1234-aa",
+      "password": "A1234-a",
       "picture": "../profile_pictures/cherriespretzel.jpeg"
     },
     {
       "id": 2,
       "username": "dictatesoy",
       "email": "dictatesoy@gmail.com",
-      "password": "B1234-bb",
+      "password": "B1234-b",
       "picture": "../profile_pictures/dictatesoy.jpeg"
+    },
+    {
+      "email": "mcboon@gmail.com",
+      "password": "C1234-c",
+      "passwordConfirm": "C1234-c",
+      "username": "mcboon",
+      "picture": "https://helios-i.mashable.com/imagery/articles/01RhPcOiy9rYKba0BstQt3m/images-3.fill.size_2000x1250.v1611692402.jpg",
+      "id": 3
     }
   ]
 }

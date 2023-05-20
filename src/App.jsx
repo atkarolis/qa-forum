@@ -5,6 +5,9 @@ import Header from './components/UI/Header';
 import Home from './components/Pages/Home';
 import Footer from './components/UI/Footer';
 import AddQuestion from './components/Pages/AddQuestion';
+import Register from './components/Pages/Register';
+import Login from './components/Pages/Login';
+import ProtectedRoutes from './components/Molecules/ProtectedRoutes';
 
 const App = () => {
   return (
@@ -12,7 +15,11 @@ const App = () => {
     <Header />
     <Routes>
         <Route index element={<Home />}/>
-        <Route path='/addQuestion' element={<AddQuestion />}/>
+        <Route element={<ProtectedRoutes />}>
+          <Route path='/addQuestion' element={<AddQuestion />}/>
+        </Route>
+        <Route path='/register' element={<Register />}/>
+        <Route path='/login' element={<Login />}/>
     </Routes>
     <Footer />
     </>

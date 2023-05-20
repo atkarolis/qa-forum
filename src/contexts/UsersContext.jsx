@@ -3,6 +3,7 @@ import { createContext, useReducer, useEffect, useState } from "react";
 const UsersContext = createContext();
 const UsersActionTypes = {
   get: 'get_all_users',
+  add: 'add_user',
   changeStatus: 'block_or_unlock_user' //new addition
 };
 
@@ -10,6 +11,15 @@ const reducer = (state, action) => {
   switch(action.type){
     case UsersActionTypes.get:
       return action.data;
+    case UsersActionTypes.add:
+      fetch(`http://localhost:8080/users`,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(action.data)
+      });
+      return [ ...state, action.data];
     case UsersActionTypes.changeStatus: //new addition start
       return state.map(el => {
         if(el.id === action.id){
@@ -48,8 +58,8 @@ const UsersProvider = ({ children }) => {
     <UsersContext.Provider
     value={{
       users,
-      UsersActionTypes,
       setUsers,
+      UsersActionTypes,
       currentUser,
       setCurrentUser
     }}
