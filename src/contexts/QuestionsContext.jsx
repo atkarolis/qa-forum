@@ -8,7 +8,6 @@ const QuestionsActionTypes = {
 };
 
 const reducer = (state, action) => {
-  console.log(action);
   switch(action.type){
     case QuestionsActionTypes.get:
       return action.data;
