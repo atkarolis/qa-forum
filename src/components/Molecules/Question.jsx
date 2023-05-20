@@ -3,12 +3,31 @@ import { useContext } from 'react';
 import UsersContext from "../../contexts/UsersContext";
 import QuestionsContext from "../../contexts/QuestionsContext";
 
+function Buttons(data){
+  const { setQuestions, QuestionsActionTypes } = useContext(QuestionsContext)
+  const { currentUser } = useContext(UsersContext);
+
+  if(!currentUser)
+    return;
+  
+  if(currentUser.id === data.props.userId){
+    return(
+      <button
+        onClick={() => setQuestions({
+          type: QuestionsActionTypes.delete,
+          id: data.props.questionId
+        })}
+      >Delete
+      </button>
+    );
+  }
+}
+
 const Question = ({ data }) => {
 
   const { users, currentUser } = useContext(UsersContext);
   const user = users.find(el => el.id === data.user_id);
-  const { setQuestions, QuestionsActionTypes } = useContext(QuestionsContext)
-
+  
   return (
     <article>
       <div className='vote-container'>
@@ -25,17 +44,12 @@ const Question = ({ data }) => {
           <span>{data.edited}</span>
         </div>
         <div>
-          {
-            currentUser &&
-            <button
-            onClick={() => setQuestions({
-              type: QuestionsActionTypes.delete,
-              id: data.id
-            })}
-            >
-              Delete
-            </button>
-          }
+          <Buttons 
+            props = {{
+              userId: user.id, 
+              questionId: data.id
+            }}
+          />
         </div>
       </div>
     </article>
