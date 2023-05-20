@@ -1,6 +1,8 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 import logo from '../../resources/ask.svg';
+import UsersContext from '../../contexts/UsersContext';
+import { useContext } from 'react';
 
 const StyledHeader = styled.header` //header scroll adjust
   height: 120px;
@@ -48,6 +50,34 @@ const StyledHeader = styled.header` //header scroll adjust
   }
 `
 
+function Nav(){
+
+  const { currentUser, setCurrentUser } = useContext(UsersContext);
+  const navigate = useNavigate();
+
+  if(!currentUser){
+    return (
+      <>
+        <li><NavLink to='/login'>LOG IN</NavLink></li>
+        <li><NavLink to='/register'>SIGN UP</NavLink></li>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <button
+        onClick={() => {
+          setCurrentUser(null);
+          navigate('/')
+        }}
+        >
+          Log out
+        </button>
+      </>
+    );
+  }
+}
+
 const Header = () => {
   return (
     <StyledHeader>
@@ -60,8 +90,7 @@ const Header = () => {
           <li><NavLink to='/'>ABOUT</NavLink></li>
         </ul>
         <ul>
-          <li><NavLink to='/login'>LOG IN</NavLink></li>
-          <li><NavLink to='/register'>SIGN UP</NavLink></li>
+          <Nav />
         </ul>
       </nav>
     </StyledHeader>

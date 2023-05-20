@@ -5,10 +5,6 @@
       "user_id": 0,
       "title": "How to clean a toilet?",
       "question": "It's been a while since I cleaned my toilet. How You guys do it? Where do I start?",
-      "category": [
-        0,
-        2
-      ],
       "answer_ids": [
         1,
         2
@@ -21,9 +17,6 @@
       "user_id": 1,
       "title": "How do I repair my microwave?",
       "question": "My microwave is broken. How can I fix it?",
-      "category": [
-        0
-      ],
       "answer_ids": [
         3
       ],
@@ -35,9 +28,6 @@
       "user_id": 2,
       "title": "How to plant a tree?",
       "question": "I have a lot of empty space in my backyard and Im planning to plant a TREE there. How?",
-      "category": [
-        1
-      ],
       "answer_ids": [
         0
       ],
@@ -45,11 +35,13 @@
       "edited": false
     },
     {
-      "id": "ff22ef55-abfd-4a19-85fc-b4789e1d9a60",
-      "user_id": 3,
-      "category": false,
-      "title": "Light bulb",
-      "question": "Hello! How to change freaking light bulb? Please HELP!"
+      "id": "860c8612-7672-46fa-ab88-9127a613f2b9",
+      "user_id": 0,
+      "answers_ids": [],
+      "likes": 0,
+      "edited": false,
+      "title": "ignas",
+      "question": "Mldc"
     }
   ],
   "answers": [

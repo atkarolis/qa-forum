@@ -19,6 +19,7 @@ const reducer = (state, action) => {
         },
         body: JSON.stringify(action.data)
       });
+      console.log(action.data)
       return [ ...state, action.data];
     case QuestionsActionTypes.delete:
       fetch(`http;//localhost:8080/questions/${action.id}`, {
