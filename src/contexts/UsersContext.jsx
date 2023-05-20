@@ -58,8 +58,8 @@ const UsersProvider = ({ children }) => {
     <UsersContext.Provider
     value={{
       users,
-      UsersActionTypes,
       setUsers,
+      UsersActionTypes,
       currentUser,
       setCurrentUser
     }}
