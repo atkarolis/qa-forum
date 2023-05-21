@@ -74,7 +74,7 @@ const StyledMain = styled.main`
 const Home = () => {
 
   const { questions } = useContext(QuestionsContext);
- 
+
   return ( //aside ir section iškelti kaip UI komponentą?
     <StyledMain>
       <aside>
