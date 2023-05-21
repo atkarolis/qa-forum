@@ -4,11 +4,11 @@ const QuestionsContext = createContext();
 const QuestionsActionTypes = {
   get: 'get_all_questions',
   add: 'add_new_question',
-  delete: 'remove_specific_question'
+  delete: 'remove_specific_question',
+  update: 'edit_question'
 };
 
 const reducer = (state, action) => {
-  console.log(action);
   switch(action.type){
     case QuestionsActionTypes.get:
       return action.data;
@@ -20,13 +20,24 @@ const reducer = (state, action) => {
         },
         body: JSON.stringify(action.data)
       });
-      console.log(action.data)
       return [ ...state, action.data];
     case QuestionsActionTypes.delete:
       fetch(`http://localhost:8080/questions/${action.id}`, {
         method: "DELETE"
       });
       return state.filter(el => el.id !== action.id);
+    case QuestionsActionTypes.update:
+      fetch(`http://localhost:8080/questions/${action.data.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(action.data)
+      });
+      let newState = [...state];
+      let index = newState.findIndex((element) => element.id === action.data.id);
+      newState[index] = action.data;
+      return newState;
     default:
       return state;
   }

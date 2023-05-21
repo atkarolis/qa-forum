@@ -27,6 +27,7 @@ const Login = () => {
 
     if(loggedInUser){
       setCurrentUser(loggedInUser);
+      localStorage.setItem("currentUser", JSON.stringify(loggedInUser));
       navigate('/');
     } else {
       setFailedLogIn(true);

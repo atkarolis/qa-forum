@@ -46,6 +46,13 @@ const UsersProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
+    const localStorageUser = localStorage.getItem("currentUser");
+    if(localStorageUser){
+      setCurrentUser(JSON.parse(localStorageUser));
+    }
+  }, []);
+
+  useEffect(() => {
     fetch(`http://localhost:8080/users`)
       .then(res => res.json())
       .then(data => setUsers({

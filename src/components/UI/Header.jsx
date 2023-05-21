@@ -68,6 +68,7 @@ function Nav(){
         <button
         onClick={() => {
           setCurrentUser(null);
+          localStorage.removeItem("currentUser");
           navigate('/')
         }}
         >

@@ -2,30 +2,45 @@ import styled from "styled-components";
 import { useContext } from 'react';
 import UsersContext from "../../contexts/UsersContext";
 import QuestionsContext from "../../contexts/QuestionsContext";
+import { useNavigate } from "react-router-dom";
 
 function Buttons(data){
   const { setQuestions, QuestionsActionTypes } = useContext(QuestionsContext)
   const { currentUser } = useContext(UsersContext);
+  const navigate = useNavigate();
 
   if(!currentUser)
     return;
-  
-  if(currentUser.id === data.props.userId){
+  if(currentUser.id === data.props.user_id){
     return(
-      <button
-        onClick={() => setQuestions({
-          type: QuestionsActionTypes.delete,
-          id: data.props.questionId
-        })}
-      >Delete
-      </button>
+      <>
+        <button
+          onClick={() => setQuestions({
+            type: QuestionsActionTypes.delete,
+            id: data.props.id
+          })}
+        >Delete
+        </button>
+        <button
+          onClick={() => 
+            navigate(
+              '/addQuestion', {
+              state: {
+                data: data.props, 
+                formState: {toEdit: true}
+              }
+          })}
+        >Edit
+        </button>
+      </>
+      
     );
   }
 }
 
 const Question = ({ data }) => {
 
-  const { users, currentUser } = useContext(UsersContext);
+  const { users } = useContext(UsersContext);
   const user = users.find(el => el.id === data.user_id);
   
   return (
@@ -45,10 +60,7 @@ const Question = ({ data }) => {
         </div>
         <div>
           <Buttons 
-            props = {{
-              userId: user.id, 
-              questionId: data.id
-            }}
+            props = {data}
           />
         </div>
       </div>
