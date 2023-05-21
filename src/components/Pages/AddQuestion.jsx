@@ -10,7 +10,7 @@ const AddQuestion = () => {
   const navigate = useNavigate();
   const navigateData = useLocation();
   const { currentUser } = useContext(UsersContext);
-  const { questions, setQuestions, QuestionsActionTypes } = useContext(QuestionsContext);
+  const { setQuestions, QuestionsActionTypes } = useContext(QuestionsContext);
   const [formInputs, setFormInputs] = useState(
     {
       question: {

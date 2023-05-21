@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import UsersContext from "../../contexts/UsersContext";
 import QuestionsContext from "../../contexts/QuestionsContext";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Buttons(data){
   const { setQuestions, QuestionsActionTypes } = useContext(QuestionsContext)
@@ -52,8 +53,10 @@ const Question = ({ data }) => {
         <span>ans count</span>
       </div>
       <div className='question-container'>
-        <h4>{data.title}</h4>
-        <p>{data.question}</p>
+        <Link to='/answer'>
+          <h4>{data.title}</h4>
+          <p>{data.question}</p>
+        </Link>
         <div className='details'>
           <span>{user.username}</span>
           <span>{data.edited}</span>
