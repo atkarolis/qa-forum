@@ -26,6 +26,8 @@ const AddQuestion = () => {
         question: "",
         answer_ids: [],
         likes: 0,
+        likers: [],
+        dislikers: [],
         edited: false
       },
       formState: {

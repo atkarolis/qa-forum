@@ -4,6 +4,7 @@ import UsersContext from "../../contexts/UsersContext";
 import QuestionsContext from "../../contexts/QuestionsContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import Votes from "./Votes";
 
 const StyledArticle = styled.article`
   .question-container {
@@ -135,9 +136,7 @@ const Question = ({ data }) => {
   return (
     <StyledArticle>
       <div className='vote-container'>
-        <button>^</button>
-        <span>votes</span>
-        <button>v</button>
+        <Votes question = {data} />
         <span>ans count</span>
       </div>
       <div className='question-container'>
