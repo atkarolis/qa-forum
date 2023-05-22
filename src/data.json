@@ -10,6 +10,8 @@
         2
       ],
       "likes": 20,
+      "likers": [],
+      "dislikers": [],
       "edited": false
     },
     {
@@ -21,6 +23,8 @@
         3
       ],
       "likes": 13,
+      "likers": [],
+      "dislikers": [],
       "edited": false
     },
     {
@@ -32,6 +36,8 @@
         0
       ],
       "likes": 0,
+      "likers": [],
+      "dislikers": [],
       "edited": false
     },
     {
@@ -41,6 +47,8 @@
       "question": "wats up",
       "answer_ids": [],
       "likes": 0,
+      "likers": [],
+      "dislikers": [],
       "edited": false
     }
   ],
