@@ -10,7 +10,7 @@
         2
       ],
       "likes": 20,
-      "edited": true
+      "edited": false
     },
     {
       "id": 1,
@@ -35,13 +35,13 @@
       "edited": false
     },
     {
-      "id": "5415865d-6c20-41d3-9ff3-891a53b14e8d",
+      "id": "d36b8974-aa6d-46e7-aa05-3712914b220d",
       "user_id": 0,
-      "title": "hey",
-      "question": "labas karoli",
+      "title": "yo",
+      "question": "wats up",
       "answer_ids": [],
       "likes": 0,
-      "edited": true
+      "edited": false
     }
   ],
   "answers": [

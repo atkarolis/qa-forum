@@ -4,6 +4,9 @@ import { useContext } from 'react';
 import QuestionsContext from '../../contexts/QuestionsContext';
 import Question from '../Molecules/Question';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 const StyledMain = styled.main`
@@ -12,7 +15,7 @@ const StyledMain = styled.main`
   padding-top: 120px;
   aside{
     border-width: 7px;
-    border-color: black;
+    border-color: #000000;
     border-style: double;
     border-radius: 30px;
     margin: 30px 20px 0 60px;
@@ -87,7 +90,7 @@ const StyledMain = styled.main`
         }
       }
       .question-container {
-        border: 1px solid black;
+        border: 1px solid #000000;
         border-radius: 30px;
         width: 100%;
         .details {
@@ -98,7 +101,7 @@ const StyledMain = styled.main`
           display: flex;
           justify-content: flex-end;
           span {
-            border: 1px solid black;
+            border: 1px solid #000000;
           }
         }
       }
@@ -124,7 +127,7 @@ const Home = () => {
         <section>
           <div className='search-container'>
             <input type="text" placeholder='Search questions'/>
-            <button type="submit"><i className="fa fa-search">S</i></button>
+            <button type="submit"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
             <button>Filter</button>
           </div>
           <Link to="addQuestion">

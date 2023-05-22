@@ -13,6 +13,7 @@ const StyledHeader = styled.header`
   top: 0;
   width: 100%;
   background-color: #FFFFFF;
+  z-index: 1;
   div img {
     height: 100px;
     padding-left: 150px;
@@ -22,7 +23,6 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     width: 100%;
     padding-right: 200px;
-    display: flex;
     align-items: center;
     ul {
       list-style-type: none;
@@ -58,6 +58,35 @@ const StyledHeader = styled.header`
         }
       }
     }
+    .logged {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      p {
+        color: #3D72A4
+      }
+      img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border: 1px solid #000000;
+      border-radius: 50%;
+      padding: 0;
+      }
+      button {
+        cursor: pointer;
+        background-color: #3D72A4;
+        color: #FFFFFF;
+        border: 2px solid #3D72A4;
+        padding: 5px 20px;
+        font-weight: 600;
+        &:hover {
+          border: 2px solid #000000;
+          color: #000000;
+          box-shadow: 3px 3px 3px #3D72A4;
+        }
+      }
+    }
   }
 `
 
@@ -75,7 +104,9 @@ function Nav(){
     );
   } else {
     return (
-      <>
+      <div className='logged'>
+        <p>Welcome {currentUser.username}!</p>
+        <img src={currentUser.picture} alt={`Avatar of ${currentUser.username}`} />
         <button
         onClick={() => {
           setCurrentUser(null);
@@ -83,9 +114,9 @@ function Nav(){
           navigate('/')
         }}
         >
-          Log out
+          LOG OUT
         </button>
-      </>
+      </div>
     );
   }
 }
