@@ -10,7 +10,9 @@
         2
       ],
       "likes": 20,
-      "edited": true
+      "likers": [],
+      "dislikers": [],
+      "edited": false
     },
     {
       "id": 1,
@@ -21,6 +23,8 @@
         3
       ],
       "likes": 13,
+      "likers": [],
+      "dislikers": [],
       "edited": false
     },
     {
@@ -32,16 +36,20 @@
         0
       ],
       "likes": 0,
+      "likers": [],
+      "dislikers": [],
       "edited": false
     },
     {
-      "id": "5415865d-6c20-41d3-9ff3-891a53b14e8d",
+      "id": "d36b8974-aa6d-46e7-aa05-3712914b220d",
       "user_id": 0,
-      "title": "hey",
-      "question": "labas karoli",
+      "title": "yo",
+      "question": "wats up",
       "answer_ids": [],
       "likes": 0,
-      "edited": true
+      "likers": [],
+      "dislikers": [],
+      "edited": false
     }
   ],
   "answers": [

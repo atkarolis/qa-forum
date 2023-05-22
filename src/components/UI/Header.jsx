@@ -4,49 +4,89 @@ import logo from '../../resources/ask.svg';
 import UsersContext from '../../contexts/UsersContext';
 import { useContext } from 'react';
 
-const StyledHeader = styled.header` //header scroll adjust
+const StyledHeader = styled.header`
   height: 120px;
-  padding: 0 200px 0 150px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  z-index: 1;
   div img {
     height: 100px;
+    padding-left: 150px;
   }
   nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding-right: 200px;
+    align-items: center;
     ul {
       list-style-type: none;
       display: flex;
       gap: 25px;
+      li {
+        a {
+          text-decoration: none;
+          position: relative;
+          display: inline-block;
+          color: #000000;
+          font-weight: 600;
+        }
+        a::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: #3D72A4;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+        a:hover::after{
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+        a.active {
+          color: #3D72A4;
+          font-weight: 600;
+        }
+      }
     }
-  }
-  a {
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-  }
-  a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px; //maybe adjust it later
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  a:hover::after{
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-  a.active {
-    color: #000000;
-    font-weight: 600; //adjust it later
+    .logged {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      p {
+        color: #3D72A4
+      }
+      img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border: 1px solid #000000;
+      border-radius: 50%;
+      padding: 0;
+      }
+      button {
+        cursor: pointer;
+        background-color: #3D72A4;
+        color: #FFFFFF;
+        border: 2px solid #3D72A4;
+        padding: 5px 20px;
+        font-weight: 600;
+        &:hover {
+          border: 2px solid #000000;
+          color: #000000;
+          box-shadow: 3px 3px 3px #3D72A4;
+        }
+      }
+    }
   }
 `
 
@@ -64,7 +104,9 @@ function Nav(){
     );
   } else {
     return (
-      <>
+      <div className='logged'>
+        <p>Welcome {currentUser.username}!</p>
+        <img src={currentUser.picture} alt={`Avatar of ${currentUser.username}`} />
         <button
         onClick={() => {
           setCurrentUser(null);
@@ -72,9 +114,9 @@ function Nav(){
           navigate('/')
         }}
         >
-          Log out
+          LOG OUT
         </button>
-      </>
+      </div>
     );
   }
 }
@@ -90,8 +132,8 @@ const Header = () => {
           <li><NavLink to='/'>HOME</NavLink></li>
           <li><NavLink to='/'>ABOUT</NavLink></li>
         </ul>
-        <ul>
-          <Nav />
+        <ul className='loginNav'>
+          <Nav/>
         </ul>
       </nav>
     </StyledHeader>
