@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 const StyledMain = styled.main`
   min-height: calc(100vh - 320px);
   display: flex;
+  padding-top: 120px;
   aside{
     border-width: 7px;
     border-color: black;
