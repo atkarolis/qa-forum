@@ -4,49 +4,60 @@ import logo from '../../resources/ask.svg';
 import UsersContext from '../../contexts/UsersContext';
 import { useContext } from 'react';
 
-const StyledHeader = styled.header` //header scroll adjust
+const StyledHeader = styled.header`
   height: 120px;
-  padding: 0 200px 0 150px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FFFFFF;
   div img {
     height: 100px;
+    padding-left: 150px;
   }
   nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding-right: 200px;
+    display: flex;
+    align-items: center;
     ul {
       list-style-type: none;
       display: flex;
       gap: 25px;
+      li {
+        a {
+          text-decoration: none;
+          position: relative;
+          display: inline-block;
+          color: #000000;
+          font-weight: 600;
+        }
+        a::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: #3D72A4;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+        a:hover::after{
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+        a.active {
+          color: #3D72A4;
+          font-weight: 600;
+        }
+      }
     }
-  }
-  a {
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-  }
-  a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px; //maybe adjust it later
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  a:hover::after{
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-  a.active {
-    color: #000000;
-    font-weight: 600; //adjust it later
   }
 `
 
@@ -90,8 +101,8 @@ const Header = () => {
           <li><NavLink to='/'>HOME</NavLink></li>
           <li><NavLink to='/'>ABOUT</NavLink></li>
         </ul>
-        <ul>
-          <Nav />
+        <ul className='loginNav'>
+          <Nav/>
         </ul>
       </nav>
     </StyledHeader>

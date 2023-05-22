@@ -94,7 +94,7 @@ const AddQuestion = () => {
             onChange={(e) => {inputHandler(e)}}
           ></textarea>
         </div>
-        <button>{formInputs.formState.toEdit ? <>Edit!</> : <>Ask!</>}</button>
+        <button>{formInputs.formState.toEdit ? <>Edit</> : <>Ask!</>}</button>
       </form>
     </main>
   );
