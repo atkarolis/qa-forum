@@ -9,7 +9,6 @@ import { UsersProvider } from './contexts/UsersContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    // <AnswersProvider>
         <UsersProvider>
             <QuestionsProvider>
                 <BrowserRouter>
@@ -17,5 +16,4 @@ root.render(
                 </BrowserRouter>
             </QuestionsProvider>
         </UsersProvider>
-    {/* </AnswersProvider> */}
 );
