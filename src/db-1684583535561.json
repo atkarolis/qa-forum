@@ -10,7 +10,7 @@
         2
       ],
       "likes": 20,
-      "edited": true
+      "edited": false
     },
     {
       "id": 1,
@@ -35,13 +35,13 @@
       "edited": false
     },
     {
-      "id": "5415865d-6c20-41d3-9ff3-891a53b14e8d",
+      "id": "860c8612-7672-46fa-ab88-9127a613f2b9",
       "user_id": 0,
-      "title": "hey",
-      "question": "labas karoli",
-      "answer_ids": [],
+      "answers_ids": [],
       "likes": 0,
-      "edited": true
+      "edited": false,
+      "title": "ignas",
+      "question": "Mldc"
     }
   ],
   "answers": [
