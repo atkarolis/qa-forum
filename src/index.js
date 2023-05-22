@@ -5,11 +5,11 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { QuestionsProvider } from './contexts/QuestionsContext';
 import { UsersProvider } from './contexts/UsersContext';
-import { AnswersProvider } from './contexts/AnswersContext';
+// import { AnswersProvider } from './contexts/AnswersContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <AnswersProvider>
+    // <AnswersProvider>
         <UsersProvider>
             <QuestionsProvider>
                 <BrowserRouter>
@@ -17,5 +17,5 @@ root.render(
                 </BrowserRouter>
             </QuestionsProvider>
         </UsersProvider>
-    </AnswersProvider>
+    {/* </AnswersProvider> */}
 );
