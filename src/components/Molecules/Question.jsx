@@ -42,16 +42,21 @@ const StyledArticle = styled.article`
       display: flex;
       justify-content: space-between;
       button {
-        border: 1px solid black;
+        border: 1px solid #000000;
         padding: 2.5px 20px;
         cursor: pointer;
         color: #000000;
         background-color: #FFFFFF;
       }
+      .edit {
+        background-color: #3D72A4;
+        border: 1px solid #3D72A4;
+        color: #FFFFFF;
+      }
       .edit:hover {
         background-color: #3D72A4;
         border-color: #000000;
-        color: #FFFFFF;
+        color: #000000;
         box-shadow: 3px 3px 3px #3D72A4;
       }
       .edit[data-tooltip]:hover::after {

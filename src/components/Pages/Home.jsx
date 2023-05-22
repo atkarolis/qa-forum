@@ -12,7 +12,7 @@ const StyledMain = styled.main`
   padding-top: 120px;
   aside{
     border-width: 7px;
-    border-color: black;
+    border-color: #000000;
     border-style: double;
     border-radius: 30px;
     margin: 30px 20px 0 60px;
@@ -87,7 +87,7 @@ const StyledMain = styled.main`
         }
       }
       .question-container {
-        border: 1px solid black;
+        border: 1px solid #000000;
         border-radius: 30px;
         width: 100%;
         .details {
@@ -98,7 +98,7 @@ const StyledMain = styled.main`
           display: flex;
           justify-content: flex-end;
           span {
-            border: 1px solid black;
+            border: 1px solid #000000;
           }
         }
       }
