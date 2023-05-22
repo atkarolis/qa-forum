@@ -5,6 +5,31 @@ import QuestionsContext from "../../contexts/QuestionsContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
+const StyledArticle = styled.article`
+  .question-container {
+    padding: 15px 25px;
+    a {
+      text-decoration: none;
+      h4 {
+        margin: 0px;
+        font-weight: 600;
+      }
+    }
+    .details {
+      .user {
+          display: flex;
+          flex-direction: column;
+        img {
+          height: 50px;
+          width: 50px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+`
+
 function Buttons(data){
   const { setQuestions, QuestionsActionTypes } = useContext(QuestionsContext)
   const { currentUser } = useContext(UsersContext);
@@ -34,7 +59,6 @@ function Buttons(data){
         >Edit
         </button>
       </>
-      
     );
   }
 }
@@ -45,7 +69,7 @@ const Question = ({ data }) => {
   const user = users.find(el => el.id === data.user_id);
   
   return (
-    <article>
+    <StyledArticle>
       <div className='vote-container'>
         <button>^</button>
         <span>votes</span>
@@ -58,7 +82,10 @@ const Question = ({ data }) => {
           <p>{data.question}</p>
         </Link>
         <div className='details'>
-          <span>{user.username}</span>
+          <div className="user">
+            <img src={user.picture} alt={`${user.username} avatar`} />
+            <span>{user.username}</span>
+          </div>
           <span>{data.edited}</span>
         </div>
         <div>
@@ -67,7 +94,7 @@ const Question = ({ data }) => {
           />
         </div>
       </div>
-    </article>
+    </StyledArticle>
   );
 }
  

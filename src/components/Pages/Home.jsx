@@ -15,7 +15,7 @@ const StyledMain = styled.main`
     border-color: black;
     border-style: double;
     border-radius: 30px;
-    margin: 20px;
+    margin: 30px 20px 0 60px;
     padding: 10px 35px 50px 5px;
     height: 100%;
     ul {
@@ -24,12 +24,36 @@ const StyledMain = styled.main`
         line-height: 22px;
         a {
           text-decoration: none;
+          position: relative;
+          display: inline-block;
+          color: #000000;
+          font-weight: 600;
+        }
+        a::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: #3D72A4;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+        a:hover::after{
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+        a.active {
+          color: #3D72A4;
+          font-weight: 600;
         }
       }
     }
   }
   .MAIN {
-    padding: 20px 200px 20px 0px;
+    padding: 30px 200px 20px 0px;
     width: 100%;
     > section {
       display: flex;
@@ -53,6 +77,7 @@ const StyledMain = styled.main`
     }
     article {
       display: flex;
+      padding-bottom: 20px;
       .vote-container {
         display: flex;
         flex-direction: column;
@@ -63,7 +88,7 @@ const StyledMain = styled.main`
       }
       .question-container {
         border: 1px solid black;
-        border-radius: 10px;
+        border-radius: 30px;
         width: 100%;
         .details {
           display: flex;
