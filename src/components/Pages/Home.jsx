@@ -15,8 +15,17 @@ const StyledMain = styled.main`
     border-style: double;
     border-radius: 30px;
     margin: 20px;
-    padding: 10px 35px 70px 5px;
+    padding: 10px 35px 50px 5px;
     height: 100%;
+    ul {
+      list-style-type: none;
+      li {
+        line-height: 22px;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
   }
   .MAIN {
     padding: 20px 200px 20px 0px;
@@ -80,13 +89,6 @@ const Home = () => {
       <aside>
         <ul>
           <li><NavLink to='/'>Home</NavLink></li>
-          <li>Category
-            <ul>
-              <li>Interior maintenance</li>
-              <li>Exterior maintenance</li>
-              <li>Other</li>
-            </ul>
-          </li>
           <li>Most voted</li>
           <li>Unanswered</li>
           <li>About</li>
