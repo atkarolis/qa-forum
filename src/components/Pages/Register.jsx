@@ -3,6 +3,12 @@ import * as Yup from 'yup';
 import UsersContext from '../../contexts/UsersContext';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import styled from "styled-components";
+
+const StyledMain = styled.main`
+  min-height: calc(100vh - 320px);
+  padding-top: 120px;
+`
 
 const Register = () => {
 
@@ -53,7 +59,7 @@ const Register = () => {
     });
 
   return (
-    <main>
+    <StyledMain>
       <h1>Registration form</h1>
       <form onSubmit={formik.handleSubmit}>
         <div>
@@ -140,7 +146,7 @@ const Register = () => {
           <button type="submit">Register</button>
         </Link>
       </form>
-    </main>
+    </StyledMain>
   );
 }
  

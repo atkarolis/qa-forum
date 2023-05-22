@@ -1,6 +1,12 @@
 import { useContext, useState } from "react";
 import UsersContext from "../../contexts/UsersContext";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledMain = styled.main`
+  min-height: calc(100vh - 320px);
+  padding-top: 120px;
+`
 
 const Login = () => {
   const [formInputs, setFormInputs]= useState({
@@ -34,7 +40,7 @@ const Login = () => {
     }
   }
   return (
-    <main>
+    <StyledMain>
       <form onSubmit={(e) => {formSubmit(e)}}>
         <div>
           <label htmlFor="email">Email:</label>
@@ -62,7 +68,7 @@ const Login = () => {
           Incorrect login information
         </h1>
       }
-    </main>
+    </StyledMain>
   );
 }
  
