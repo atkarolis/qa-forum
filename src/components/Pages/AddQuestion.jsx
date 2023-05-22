@@ -4,6 +4,12 @@ import { v4 as generateId} from 'uuid';
 import UsersContext from '../../contexts/UsersContext';
 import QuestionsContext from "../../contexts/QuestionsContext";
 import { useLocation } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledMain = styled.main`
+  min-height: calc(100vh - 320px);
+  padding-top: 120px;
+`
 
 const AddQuestion = () => {
 
@@ -74,7 +80,7 @@ const AddQuestion = () => {
   useEffect(() => updateStateForEdit(), []);
 
   return (
-    <main>
+    <StyledMain>
       <h1>Submit Your Question, Pal</h1>
       <form onSubmit={(e) => {formHandler(e)}}>
         <div>
@@ -96,7 +102,7 @@ const AddQuestion = () => {
         </div>
         <button>{formInputs.formState.toEdit ? <>Edit</> : <>Ask!</>}</button>
       </form>
-    </main>
+    </StyledMain>
   );
 }
  

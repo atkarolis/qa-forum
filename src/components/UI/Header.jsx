@@ -13,6 +13,7 @@ const StyledHeader = styled.header`
   top: 0;
   width: 100%;
   background-color: #FFFFFF;
+  z-index: 1;
   div img {
     height: 100px;
     padding-left: 150px;
