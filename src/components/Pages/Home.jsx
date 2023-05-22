@@ -4,6 +4,9 @@ import { useContext } from 'react';
 import QuestionsContext from '../../contexts/QuestionsContext';
 import Question from '../Molecules/Question';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 const StyledMain = styled.main`
@@ -124,7 +127,7 @@ const Home = () => {
         <section>
           <div className='search-container'>
             <input type="text" placeholder='Search questions'/>
-            <button type="submit"><i className="fa fa-search">S</i></button>
+            <button type="submit"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
             <button>Filter</button>
           </div>
           <Link to="addQuestion">
