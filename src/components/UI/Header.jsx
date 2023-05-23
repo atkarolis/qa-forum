@@ -71,6 +71,7 @@ const StyledHeader = styled.header`
       height: 80px;
       object-fit: cover;
       border: 1px solid #000000;
+      box-shadow: 1px 1px 2px #000000;
       border-radius: 50%;
       padding: 0;
       }
@@ -78,11 +79,12 @@ const StyledHeader = styled.header`
         cursor: pointer;
         background-color: #3D72A4;
         color: #FFFFFF;
-        border: 2px solid #3D72A4;
+        border: 1px solid #3D72A4;
+        box-shadow: 1px 1px 2px #3D72A4;
         padding: 5px 20px;
         font-weight: 600;
         &:hover {
-          border: 2px solid #000000;
+          border: 1px solid #000000;
           color: #000000;
           box-shadow: 3px 3px 3px #3D72A4;
         }

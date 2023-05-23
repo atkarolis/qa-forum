@@ -7,13 +7,47 @@ import { Link } from 'react-router-dom';
 import Votes from "./Votes";
 
 const StyledArticle = styled.article`
+  display: flex;
+  gap: 35px;
+  .vote-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 20px;
+    width: 120px;
+    font-size: 1.1rem;
+    span {
+      align-self: center;
+    }
+  }
   .question-container {
     border: 1px solid #000000;
-    padding: 15px 25px;
+    box-shadow: 1px 1px 1px #000000;
+    padding: 20px 30px;
     border-radius: 30px;
     width: 100%;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    .click-to-answer[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        margin: -5px 0 0 70px;
+        background-color: #FFFFFF;
+        color: #3D72A4;
+        border-radius: 30px;
+        border: 1px solid #3D72A4;
+        box-shadow: 1px 1px 2px #3D72A4;
+        padding: 10px;
+        font-size: 1.1rem;
+        width: 120px;
+        letter-spacing: 0px;
+      }
     a {
       text-decoration: none;
+      color: #3D72A4;
+      &:hover {
+        letter-spacing: 0.25px;
+      }
       h4 {
         margin: 0px;
         font-weight: 600;
@@ -27,8 +61,8 @@ const StyledArticle = styled.article`
           display: flex;
           flex-direction: column;
         img {
-          height: 50px;
-          width: 50px;
+          height: 60px;
+          width: 60px;
           object-fit: cover;
           border-radius: 50%;
         }
@@ -72,13 +106,15 @@ const StyledArticle = styled.article`
         color: #3D72A4;
         border-radius: 30px;
         border: 1px solid #3D72A4;
+        box-shadow: 1px 1px 2px #3D72A4;
         padding: 10px;
-        font-size: 0.8rem;
-        width: 100px;
+        font-size: 1rem;
+        width: 120px;
+        margin-left: 15px;
       }
       .delete:hover {
         background-color: #FF585D;
-        border-color: #7b2326;
+        border-color: 1px solid #7b2326;
         color: #FFFFFF;
         box-shadow: 3px 3px 3px #FF585D;
         position: relative;
@@ -90,9 +126,11 @@ const StyledArticle = styled.article`
         color: #FF585D;
         border-radius: 30px;
         border: 1px solid #FF585D;
+        box-shadow: 1px 1px 2px #FF585D;
         padding: 10px;
-        font-size: 0.8rem;
-        width: 100px;
+        font-size: 1rem;
+        width: 120px;
+        margin-left: 15px;
       }
     }
   }
@@ -142,11 +180,13 @@ const Question = ( {data} ) => {
     <StyledArticle>
       <div className='vote-container'>
         <Votes question = {data} />
-        <span>answers count</span>
+        <span>Likes</span>
       </div>
       <div className='question-container'>
-        <Link state={data} 
-        to='/answer'
+        <Link className="click-to-answer" 
+          data-tooltip="Tap to answer!"
+          state={data} 
+          to='/answer'
         >
           <h4>{data.title}</h4>
           <p>{data.question}</p>

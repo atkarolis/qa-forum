@@ -70,7 +70,7 @@ const StyledMain = styled.main`
         margin-left: 105px;
         }
         input::placeholder{
-          padding-left: 25px;
+          padding-left: 20px;
           color: #3D72A4;
           font-size: 1.1rem;
         }
@@ -83,10 +83,11 @@ const StyledMain = styled.main`
         cursor: pointer;
         font-size: 1.1rem;
         border: 1px solid #3D72A4;
+        box-shadow: 1px 1px 2px #3D72A4;
         background-color: #3D72A4;
         color: #FFFFFF;
         &:hover {
-          border: 2px solid #000000;
+          border: 1px solid #000000;
           color: #000000;
           box-shadow: 3px 3px 3px #3D72A4;
         }
@@ -97,9 +98,9 @@ const StyledMain = styled.main`
       }
       .ask-btn{
         background-color: #008000;
-        background-color: #008000;
+        box-shadow: 1px 1px 2px #008000;
         &:hover {
-          border: 2px solid #000000;
+          border: 1px solid #000000;
           color: #000000;
           box-shadow: 3px 3px 3px #008000;
         }
