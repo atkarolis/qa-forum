@@ -14,15 +14,16 @@ const StyledHeader = styled.header`
   width: 100%;
   background-color: #FFFFFF;
   z-index: 1;
+  font-size: 1.2rem;
   div img {
     height: 100px;
-    padding-left: 150px;
+    padding-left: 200px;
   }
   nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-right: 200px;
+    padding-right: 250px;
     align-items: center;
     ul {
       list-style-type: none;
@@ -130,7 +131,6 @@ const Header = () => {
       <nav>
         <ul>
           <li><NavLink to='/'>HOME</NavLink></li>
-          <li><NavLink to='/'>ABOUT</NavLink></li>
         </ul>
         <ul className='loginNav'>
           <Nav/>

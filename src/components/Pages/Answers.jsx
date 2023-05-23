@@ -33,7 +33,6 @@ const StyledMain = styled.main`
 function Buttons({data}){
   const { setAnswers, AnswersActionTypes } = useContext(AnswersContext);
   const { currentUser } = useContext(UsersContext);
-  console.log(data.id);
   if(!currentUser)
     return;
   if(currentUser.id === data.user_id){

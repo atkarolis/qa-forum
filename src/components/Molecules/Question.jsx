@@ -8,7 +8,10 @@ import Votes from "./Votes";
 
 const StyledArticle = styled.article`
   .question-container {
+    border: 1px solid #000000;
     padding: 15px 25px;
+    border-radius: 30px;
+    width: 100%;
     a {
       text-decoration: none;
       h4 {
@@ -17,6 +20,8 @@ const StyledArticle = styled.article`
       }
     }
     .details {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
       .user {
           display: flex;
@@ -133,7 +138,6 @@ const Question = ( {data} ) => {
   const { users } = useContext(UsersContext);
   const user = users.find(el => el.id === data.user_id);
 
-  //console.log(users);
   return (
     <StyledArticle>
       <div className='vote-container'>
@@ -154,7 +158,7 @@ const Question = ( {data} ) => {
           </div>
           <div className="edited">
             <p>Created/Edited:</p>
-            <p>{data.edited}1991-03-20</p>
+            <p>{data.edited}2023-05-23</p>
           </div>
         </div>
         <div className="buttons">

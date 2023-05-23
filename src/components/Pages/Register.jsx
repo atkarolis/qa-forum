@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import UsersContext from '../../contexts/UsersContext';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 
 const StyledMain = styled.main`
@@ -12,6 +12,7 @@ const StyledMain = styled.main`
 
 const Register = () => {
 
+  const navigate = useNavigate();
   const { setUsers, UsersActionTypes } = useContext(UsersContext);
 
   const values = {
@@ -46,7 +47,7 @@ const Register = () => {
       .url('This field must be a valid URL.')
       .trim(),
     });
-  
+
     const formik = useFormik({
       initialValues: values,
       validationSchema: validationSchema,
@@ -55,6 +56,7 @@ const Register = () => {
           type: UsersActionTypes.add,
           data: data
         });
+        navigate('/');
       }
     });
 
@@ -142,9 +144,7 @@ const Register = () => {
             >{formik.errors.picture}</p>
           }
         </div>
-        <Link to="/">
-          <button type="submit">Register</button>
-        </Link>
+        <button type="submit">Register</button>
       </form>
     </StyledMain>
   );
