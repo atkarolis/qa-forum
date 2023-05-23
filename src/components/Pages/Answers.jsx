@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import AnswersContext from "../../contexts/AnswersContext";
 import { useLocation } from "react-router-dom";
@@ -46,6 +46,35 @@ const Answers = () => {
 
   console.log(questionAnswers);
 
+  const { AnswersActionTypes, setAnswers } = useContext(AnswersContext)
+
+  const [formInputs, setFormInputs] = useState({
+    answer: '',
+    likes: '',
+    edited: false
+  });
+
+  const inputHandler = e => {
+    setFormInputs({
+      ...formInputs,
+      [e.target.answer]: e.target.value
+    })
+  }
+
+  const formHandler = e => {
+    e.preventDefault();
+    const newAnswer = {
+      ...formInputs,
+      id: generateId(),
+      user_id: user.id,
+      question_id: question.id
+    };
+    setAnswers({
+      type: AnswersActionTypes.add,
+      data: newAnswer
+    });
+  }
+
 
   return (
     <StyledMain>
@@ -63,7 +92,6 @@ const Answers = () => {
           <img src={user.picture} alt={`Avatar of ${user.username}`} />
           <span>{user.username}</span>
         </div>
-        <button>Answer</button>
       </section>
         <ul>
           {questionAnswers.map((answer, i) => (
@@ -75,9 +103,21 @@ const Answers = () => {
           ))}
         </ul>
       <section>
+        <h1>Shoot Your Answer for the Question above</h1>
+        <form onSubmit={(e) => formHandler(e)}>
+            <div>
+              <label htmlFor="answer">Your answer is:</label>
+              <input required type="text"
+                name="answer" id="answer"
+                defaultValue={formInputs.answer}
+                onChange={(e)=>{inputHandler(e)}}
+              />
+            </div>
+            <button>Provide an Answer</button>
+        </form>
       </section>
     </StyledMain>
   );
 }
- 
+
 export default Answers;

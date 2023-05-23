@@ -95,6 +95,15 @@
       "answer": "The Consumer Product Safety Commission reports that people have been electrocuted trying to repair their microwaves. So don't try it",
       "likes": 25,
       "edited": false
+    },
+    {
+      "answer": "",
+      "likes": "",
+      "edited": false,
+      "undefined": "sdsd",
+      "id": "d727b4ae-d4fc-4173-aef7-ccff1afd82aa",
+      "user_id": 1,
+      "question_id": 1
     }
   ],
   "users": [
