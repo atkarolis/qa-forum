@@ -30,22 +30,35 @@ const StyledMain = styled.main`
   }
 `
 
-
+function Buttons({data}){
+  const { setAnswers, AnswersActionTypes } = useContext(AnswersContext);
+  const { currentUser } = useContext(UsersContext);
+  console.log(data.id);
+  if(!currentUser)
+    return;
+  if(currentUser.id === data.user_id){
+    return(
+      <>
+        <button className="delete"
+          // data-tooltip="Tap to delete permanently"
+          onClick={() => setAnswers({
+            type: AnswersActionTypes.delete,
+            id: data.id
+          })}
+        >Delete
+        </button>
+      </>
+    );
+  }
+}
 
 const Answers = () => {
 
   const { answers } = useContext(AnswersContext);
   const { users, currentUser } = useContext(UsersContext);
-  // const user = users.find(el => el.id === users.user_id);
-
   const question = useLocation().state;
   const user = users.find(el => el.id === question.user_id);
-  // const question_id = question.map(question => );
   const questionAnswers = answers.filter(el => el.question_id === question.id);
-  //const questionAnswer = answers.filter(el => el.id === question.answer_ids);
-
-  //console.log(questionAnswers);
-
   const { AnswersActionTypes, setAnswers } = useContext(AnswersContext)
 
   const [formInputs, setFormInputs] = useState({
@@ -100,6 +113,9 @@ const Answers = () => {
               <li key={i}>Answer: {answer.answer}</li>
               <p key={i}>Provided by: {users.find(el => el.id === answer.user_id).username}</p>
               <img key={i} src={users.find(el => el.id === answer.user_id).picture} alt="Authors avatar" />
+              <Buttons 
+                data={answer}
+              />
             </div>
           ))}
         </ul>
