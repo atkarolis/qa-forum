@@ -8,7 +8,7 @@ import AddQuestion from './components/Pages/AddQuestion';
 import Register from './components/Pages/Register';
 import Login from './components/Pages/Login';
 import ProtectedRoutes from './components/Molecules/ProtectedRoutes';
-// import Answer from './components/Pages/Answer';
+import Answers from './components/Pages/Answers';
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
         <Route index element={<Home />}/>
         <Route element={<ProtectedRoutes />}>
           <Route path='/addQuestion' element={<AddQuestion />}/>
-          {/* <Route path='/answer' element={<Answer />}/> */}
+          <Route path='/answer' element={<Answers />}/>
         </Route>
         <Route path='/register' element={<Register />}/>
         <Route path='/login' element={<Login />}/>
