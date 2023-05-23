@@ -12,7 +12,7 @@
       "likes": 20,
       "likers": [],
       "dislikers": [],
-      "edited": false
+      "edited": true
     },
     {
       "id": 1,
@@ -50,6 +50,17 @@
       "likers": [],
       "dislikers": [],
       "edited": false
+    },
+    {
+      "id": "65a1de13-d429-4fa5-8aff-f7a1c50ee7d6",
+      "user_id": 0,
+      "title": "jo",
+      "question": "www",
+      "answer_ids": [],
+      "likes": 0,
+      "likers": [],
+      "dislikers": [],
+      "edited": true
     }
   ],
   "answers": [

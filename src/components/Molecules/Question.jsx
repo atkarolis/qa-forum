@@ -128,19 +128,22 @@ function Buttons(data){
   }
 }
 
-const Question = ({ data }) => {
+const Question = ( {data} ) => {
 
   const { users } = useContext(UsersContext);
   const user = users.find(el => el.id === data.user_id);
-  
+
+  //console.log(users);
   return (
     <StyledArticle>
       <div className='vote-container'>
         <Votes question = {data} />
-        <span>ans count</span>
+        <span>answers count</span>
       </div>
       <div className='question-container'>
-        <Link to='/answer'>
+        <Link state={data} 
+        to='/answer'
+        >
           <h4>{data.title}</h4>
           <p>{data.question}</p>
         </Link>
@@ -163,5 +166,6 @@ const Question = ({ data }) => {
     </StyledArticle>
   );
 }
- 
+
+export { Link };
 export default Question;
