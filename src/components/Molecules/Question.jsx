@@ -132,7 +132,8 @@ const Question = ( {data} ) => {
 
   const { users } = useContext(UsersContext);
   const user = users.find(el => el.id === data.user_id);
-  console.log(users);
+
+  //console.log(users);
   return (
     <StyledArticle>
       <div className='vote-container'>
