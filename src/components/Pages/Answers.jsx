@@ -35,7 +35,7 @@ const StyledMain = styled.main`
 const Answers = () => {
 
   const { answers } = useContext(AnswersContext);
-  const { users } = useContext(UsersContext);
+  const { users, currentUser } = useContext(UsersContext);
   // const user = users.find(el => el.id === users.user_id);
 
   const question = useLocation().state;
@@ -44,7 +44,7 @@ const Answers = () => {
   const questionAnswers = answers.filter(el => el.question_id === question.id);
   //const questionAnswer = answers.filter(el => el.id === question.answer_ids);
 
-  console.log(questionAnswers);
+  //console.log(questionAnswers);
 
   const { AnswersActionTypes, setAnswers } = useContext(AnswersContext)
 
@@ -55,9 +55,10 @@ const Answers = () => {
   });
 
   const inputHandler = e => {
+    console.log(e.target.value)
     setFormInputs({
       ...formInputs,
-      [e.target.answer]: e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
@@ -66,7 +67,7 @@ const Answers = () => {
     const newAnswer = {
       ...formInputs,
       id: generateId(),
-      user_id: user.id,
+      user_id: currentUser.id,
       question_id: question.id
     };
     setAnswers({
@@ -107,11 +108,13 @@ const Answers = () => {
         <form onSubmit={(e) => formHandler(e)}>
             <div>
               <label htmlFor="answer">Your answer is:</label>
-              <input required type="text"
+              <textarea required
+                placeholder="Type here"
                 name="answer" id="answer"
+                cols="50" rows="10"
                 defaultValue={formInputs.answer}
                 onChange={(e)=>{inputHandler(e)}}
-              />
+              ></textarea>
             </div>
             <button>Provide an Answer</button>
         </form>
