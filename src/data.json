@@ -114,6 +114,14 @@
       "username": "the_dude",
       "picture": "https://bamfstyle.com/wp-content/uploads/2016/04/dude6-main.jpg",
       "id": 4
+    },
+    {
+      "email": "ladygaga@gmail.com",
+      "password": "Ladygaga-1",
+      "passwordConfirm": "Ladygaga-1",
+      "username": "lady_gaga",
+      "picture": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTN3I8oN75zJUFaV0t8knSjaIuolgNgk5a2lALKvvy0ZuU9wNpYyCS2lqgzhZmuZSxsWxr8L-vias0DIZE",
+      "id": 5
     }
   ]
 }
