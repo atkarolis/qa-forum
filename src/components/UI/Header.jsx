@@ -70,8 +70,8 @@ const StyledHeader = styled.header`
       width: 80px;
       height: 80px;
       object-fit: cover;
-      border: 1px solid #000000;
-      box-shadow: 1px 1px 2px #000000;
+      border: 1px solid #3D72A4;
+      box-shadow: 1px 1px 2px #3D72A4;
       border-radius: 50%;
       padding: 0;
       }

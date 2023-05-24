@@ -61,10 +61,12 @@ const StyledArticle = styled.article`
           display: flex;
           flex-direction: column;
         img {
-          height: 60px;
-          width: 60px;
+          height: 65px;
+          width: 65px;
           object-fit: cover;
           border-radius: 50%;
+          border: 1px solid #3D72A4;
+          box-shadow: 1px 1px 2px #3D72A4;
         }
       }
       .edited {

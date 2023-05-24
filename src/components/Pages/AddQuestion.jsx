@@ -8,7 +8,46 @@ import styled from "styled-components";
 
 const StyledMain = styled.main`
   min-height: calc(100vh - 320px);
-  padding-top: 120px;
+  padding: 120px 250px 0px 400px;
+  h2 {
+    margin-top: 50px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: 1.1rem;
+    div {
+      display: flex;
+      justify-content: space-between;
+      width: 670px;
+      input {
+        width: 462px;
+      }
+      input::placeholder{
+        padding-left: 5px;
+        color: #3D72A4;
+      }
+      textarea::placeholder{
+        padding-left: 5px;
+        color: #3D72A4;
+      }
+    }
+  }
+  button{
+    width: 80px;
+    cursor: pointer;
+    background-color: #3D72A4;
+    border: 1px solid #3D72A4;
+    color: #FFFFFF;
+    padding: 5px 0px;
+    &:hover{
+      background-color: #3D72A4;
+      border-color: #000000;
+      color: #000000;
+      box-shadow: 3px 3px 3px #3D72A4;
+    }
+  }
 `
 
 const AddQuestion = () => {
@@ -44,7 +83,6 @@ const AddQuestion = () => {
         });
       }  
     }
-    //console.log(formInputs);
   }
 
   const inputHandler = e => {
@@ -83,12 +121,13 @@ const AddQuestion = () => {
 
   return (
     <StyledMain>
-      <h1>Submit Your Question, Pal</h1>
+      <h2>Submit Your Question, Pal</h2>
       <form onSubmit={(e) => {formHandler(e)}}>
         <div>
           <label htmlFor="title">Title of Your Question:</label>
           <input required type="text"
             name="title" id="title"
+            placeholder="Type it here, dude."
             value={formInputs.question.title}
             onChange={(e) => {inputHandler(e)}}
           />
@@ -98,6 +137,7 @@ const AddQuestion = () => {
           <textarea required
             name="question" id="question" 
             cols="50" rows="10"
+            placeholder="Shoot that Question!"
             value={formInputs.question.question}
             onChange={(e) => {inputHandler(e)}}
           ></textarea>

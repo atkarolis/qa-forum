@@ -131,6 +131,14 @@
       "username": "karl",
       "picture": "https://bamfstyle.com/wp-content/uploads/2016/04/dude6-main.jpg",
       "id": 5
+    },
+    {
+      "email": "lol@gmail.com",
+      "password": "L1234-l",
+      "passwordConfirm": "L1234-l",
+      "username": "lolita",
+      "picture": "https://bamfstyle.com/wp-content/uploads/2016/04/dude6-main.jpg",
+      "id": 6
     }
   ]
 }
