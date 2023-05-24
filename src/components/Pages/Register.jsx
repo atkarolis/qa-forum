@@ -2,16 +2,52 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import UsersContext from '../../contexts/UsersContext';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 
 const StyledMain = styled.main`
   min-height: calc(100vh - 320px);
-  padding-top: 120px;
+  padding: 120px 250px 0px 400px;
+  h2 {
+    margin-top: 50px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: 1.1rem;
+    div {
+      display: flex;
+      justify-content: space-between;
+      width: 550px;
+      input {
+        width: 350px;
+      }
+      input::placeholder{
+        padding-left: 5px;
+        color: #3D72A4;
+      }
+    }
+  }
+  button{
+    width: 80px;
+    cursor: pointer;
+      background-color: #3D72A4;
+      border: 1px solid #3D72A4;
+      color: #FFFFFF;
+      padding: 5px 0px;
+    &:hover{
+      background-color: #3D72A4;
+      border-color: #000000;
+      color: #000000;
+      box-shadow: 3px 3px 3px #3D72A4;
+    }
+  }
 `
 
 const Register = () => {
 
+  const navigate = useNavigate();
   const { setUsers, UsersActionTypes } = useContext(UsersContext);
 
   const values = {
@@ -46,7 +82,7 @@ const Register = () => {
       .url('This field must be a valid URL.')
       .trim(),
     });
-  
+
     const formik = useFormik({
       initialValues: values,
       validationSchema: validationSchema,
@@ -55,18 +91,20 @@ const Register = () => {
           type: UsersActionTypes.add,
           data: data
         });
+        navigate('/');
       }
     });
 
   return (
     <StyledMain>
-      <h1>Registration form</h1>
+      <h2>Registration form</h2>
       <form onSubmit={formik.handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
           <input 
             type="email"
             name="email" id="email"
+            placeholder='example@email.com'
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur} 
@@ -83,6 +121,7 @@ const Register = () => {
           <input 
             type="password"
             name="password" id="password"
+            placeholder='Keep it secret'
             value={formik.values.password}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -99,6 +138,7 @@ const Register = () => {
           <input 
             type="password"
             name="passwordConfirm" id="passwordConfirm"
+            placeholder='Repeat the same'
             value={formik.values.passwordConfirm}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -115,6 +155,7 @@ const Register = () => {
           <input 
             type="text"
             name="username" id="username"
+            placeholder='Anything You like'
             value={formik.values.username}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -131,6 +172,7 @@ const Register = () => {
           <input 
             type="url"
             name="picture" id="picture"
+            placeholder='Must be valid URL'
             value={formik.values.picture}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -142,9 +184,7 @@ const Register = () => {
             >{formik.errors.picture}</p>
           }
         </div>
-        <Link to="/">
-          <button type="submit">Register</button>
-        </Link>
+        <button type="submit">Register</button>
       </form>
     </StyledMain>
   );

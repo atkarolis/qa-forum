@@ -4,7 +4,6 @@ const UsersContext = createContext();
 const UsersActionTypes = {
   get: 'get_all_users',
   add: 'add_user',
-  changeStatus: 'block_or_unlock_user' //new addition
 };
 
 const reducer = (state, action) => {
@@ -20,21 +19,6 @@ const reducer = (state, action) => {
         body: JSON.stringify(action.data)
       });
       return [ ...state, action.data];
-    case UsersActionTypes.changeStatus: //new addition start
-      return state.map(el => {
-        if(el.id === action.id){
-          fetch(`http://localhost:8080/users/${action.id}`, {
-            method: "PATCH",
-            headers:{
-              "Content-Type":"application/json"
-            },
-            body: JSON.stringify({ isBlocked:!el.isBlocked })
-          })
-          return { ...el, isBlocked:!el.isBlocked }
-        } else {
-          return el;
-        }
-      }) //new addition ends here
     default:
       return state;
   }

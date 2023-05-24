@@ -14,15 +14,16 @@ const StyledHeader = styled.header`
   width: 100%;
   background-color: #FFFFFF;
   z-index: 1;
+  font-size: 1.2rem;
   div img {
     height: 100px;
-    padding-left: 150px;
+    padding-left: 200px;
   }
   nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-right: 200px;
+    padding-right: 250px;
     align-items: center;
     ul {
       list-style-type: none;
@@ -69,7 +70,8 @@ const StyledHeader = styled.header`
       width: 80px;
       height: 80px;
       object-fit: cover;
-      border: 1px solid #000000;
+      border: 1px solid #3D72A4;
+      box-shadow: 1px 1px 2px #3D72A4;
       border-radius: 50%;
       padding: 0;
       }
@@ -77,11 +79,12 @@ const StyledHeader = styled.header`
         cursor: pointer;
         background-color: #3D72A4;
         color: #FFFFFF;
-        border: 2px solid #3D72A4;
+        border: 1px solid #3D72A4;
+        box-shadow: 1px 1px 2px #3D72A4;
         padding: 5px 20px;
         font-weight: 600;
         &:hover {
-          border: 2px solid #000000;
+          border: 1px solid #000000;
           color: #000000;
           box-shadow: 3px 3px 3px #3D72A4;
         }
@@ -130,7 +133,6 @@ const Header = () => {
       <nav>
         <ul>
           <li><NavLink to='/'>HOME</NavLink></li>
-          <li><NavLink to='/'>ABOUT</NavLink></li>
         </ul>
         <ul className='loginNav'>
           <Nav/>

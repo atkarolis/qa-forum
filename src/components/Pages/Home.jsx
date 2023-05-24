@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-//<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 const StyledMain = styled.main`
   min-height: calc(100vh - 320px);
   display: flex;
@@ -18,13 +16,14 @@ const StyledMain = styled.main`
     border-color: #000000;
     border-style: double;
     border-radius: 30px;
-    margin: 30px 20px 0 60px;
-    padding: 10px 35px 50px 5px;
+    margin: 30px 20px 0 100px;
+    padding: 10px 35px 50px 0;
     height: 100%;
     ul {
       list-style-type: none;
       li {
-        line-height: 22px;
+        line-height: 1.8rem;
+        font-size: 1.2rem;
         a {
           text-decoration: none;
           position: relative;
@@ -56,53 +55,54 @@ const StyledMain = styled.main`
     }
   }
   .MAIN {
-    padding: 30px 200px 20px 0px;
+    padding: 30px 250px 20px 50px;
     width: 100%;
     > section {
       display: flex;
       padding-bottom: 20px;
       width: 100%;
       .search-container {
+        padding-left: 30px;
         width: 100%;
         display: flex;
         input {
         width: 70%;
         margin-left: 105px;
         }
+        input::placeholder{
+          padding-left: 20px;
+          color: #3D72A4;
+          font-size: 1.1rem;
+        }
         button {
-          cursor: pointer;
           margin-right: 10px;
+          padding: 0 10px;
         }
       }
       button {
         cursor: pointer;
-      }
-    }
-    article {
-      display: flex;
-      padding-bottom: 20px;
-      .vote-container {
-        display: flex;
-        flex-direction: column;
-        margin: 20px;
-        button {
-          cursor: pointer;
+        font-size: 1.1rem;
+        border: 1px solid #3D72A4;
+        box-shadow: 1px 1px 2px #3D72A4;
+        background-color: #3D72A4;
+        color: #FFFFFF;
+        &:hover {
+          border: 1px solid #000000;
+          color: #000000;
+          box-shadow: 3px 3px 3px #3D72A4;
         }
       }
-      .question-container {
-        border: 1px solid #000000;
-        border-radius: 30px;
-        width: 100%;
-        .details {
-          display: flex;
-          justify-content: space-between;
-        }
-        .categories {
-          display: flex;
-          justify-content: flex-end;
-          span {
-            border: 1px solid #000000;
-          }
+      .filter-btn, .ask-btn {
+        padding: 0 10px;
+        font-weight: 600;
+      }
+      .ask-btn{
+        background-color: #008000;
+        box-shadow: 1px 1px 2px #008000;
+        &:hover {
+          border: 1px solid #000000;
+          color: #000000;
+          box-shadow: 3px 3px 3px #008000;
         }
       }
     }
@@ -113,14 +113,13 @@ const Home = () => {
 
   const { questions } = useContext(QuestionsContext);
 
-  return ( //aside ir section iškelti kaip UI komponentą?
+  return (
     <StyledMain>
       <aside>
         <ul>
           <li><NavLink to='/'>Home</NavLink></li>
           <li>Most voted</li>
           <li>Unanswered</li>
-          <li>About</li>
         </ul>
       </aside>
       <div className='MAIN'>
@@ -128,10 +127,10 @@ const Home = () => {
           <div className='search-container'>
             <input type="text" placeholder='Search questions'/>
             <button type="submit"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
-            <button>Filter</button>
+            <button className='filter-btn'>Filter</button>
           </div>
           <Link to="addQuestion">
-            <button>Ask Your Question</button>
+            <button className='ask-btn'>Ask Your Question</button>
           </Link>
         </section>
         {

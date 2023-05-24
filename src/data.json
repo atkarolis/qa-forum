@@ -35,32 +35,12 @@
       "answer_ids": [
         0
       ],
-      "likes": 0,
-      "likers": [],
+      "likes": 1,
+      "likers": [
+        4
+      ],
       "dislikers": [],
       "edited": false
-    },
-    {
-      "id": "d36b8974-aa6d-46e7-aa05-3712914b220d",
-      "user_id": 0,
-      "title": "yo",
-      "question": "wats up",
-      "answer_ids": [],
-      "likes": 0,
-      "likers": [],
-      "dislikers": [],
-      "edited": false
-    },
-    {
-      "id": "65a1de13-d429-4fa5-8aff-f7a1c50ee7d6",
-      "user_id": 0,
-      "title": "jo",
-      "question": "www",
-      "answer_ids": [],
-      "likes": 0,
-      "likers": [],
-      "dislikers": [],
-      "edited": true
     }
   ],
   "answers": [
@@ -126,6 +106,14 @@
       "username": "mcboon",
       "picture": "https://helios-i.mashable.com/imagery/articles/01RhPcOiy9rYKba0BstQt3m/images-3.fill.size_2000x1250.v1611692402.jpg",
       "id": 3
+    },
+    {
+      "email": "dude@gmail.com",
+      "password": "Karolis-1",
+      "passwordConfirm": "Karolis-1",
+      "username": "the_dude",
+      "picture": "https://bamfstyle.com/wp-content/uploads/2016/04/dude6-main.jpg",
+      "id": 4
     }
   ]
 }

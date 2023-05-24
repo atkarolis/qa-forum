@@ -5,7 +5,42 @@ import styled from "styled-components";
 
 const StyledMain = styled.main`
   min-height: calc(100vh - 320px);
-  padding-top: 120px;
+  padding: 120px 250px 0px 400px;
+  h2 {
+    margin-top: 50px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: 1.1rem;
+    div {
+      display: flex;
+      justify-content: space-between;
+      width: 350px;
+      input {
+        width: 250px;
+      }
+      input::placeholder{
+        padding-left: 5px;
+        color: #3D72A4;
+      }
+    }
+  }
+  button{
+    width: 80px;
+    cursor: pointer;
+      background-color: #3D72A4;
+      border: 1px solid #3D72A4;
+      color: #FFFFFF;
+      padding: 5px 0px;
+    &:hover{
+      background-color: #3D72A4;
+      border-color: #000000;
+      color: #000000;
+      box-shadow: 3px 3px 3px #3D72A4;
+    }
+  }
 `
 
 const Login = () => {
@@ -41,11 +76,14 @@ const Login = () => {
   }
   return (
     <StyledMain>
+      <h2>Login:</h2>
       <form onSubmit={(e) => {formSubmit(e)}}>
         <div>
           <label htmlFor="email">Email:</label>
           <input type="email"
+            required
             name="email" id="email"
+            placeholder="example@email.com"
             value={formInputs.email}
             onChange={(e) => {inputHandler(e)}}
           />
@@ -53,7 +91,9 @@ const Login = () => {
         <div>
           <label htmlFor="password">Password:</label>
           <input type="password"
+            required
             name="password" id="password"
+            placeholder="Keep it secret"
             value={formInputs.password}
             onChange={(e) => {inputHandler(e)}}
           />

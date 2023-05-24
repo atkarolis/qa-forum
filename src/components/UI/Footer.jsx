@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 const StyledFooter = styled.footer`
   height: 200px;
-  padding-right: 200px;
+  padding-right: 250px;
   background-color: #000000;
   color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   .links-div {
-    padding: 25px 0px 0px 250px;
+    padding: 25px 0px 0px 350px;
     display: flex;
     gap: 30px;
   }
@@ -37,7 +37,6 @@ const Footer = () => {
         <div className='links-div'>
           <ul>
             <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/'>About</NavLink></li>
           </ul>
           <ul>
             <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a></li>
